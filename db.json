@@ -16,37 +16,5 @@
                 "type" : "variable"
             }
         ]
-    },
-     "image" : {
-        "chats": [
-            {
-                "image_url" : "https://a.jpg",
-                "type" : "image"
-            },
-            {
-                "text" : "HEHEHEHE",
-                "type" : "text"
-            }
-        ]
-    },
-    "button" : {
-        "chats": [
-            {
-                "text" : "Halo ini adalah json-api response text bubble 1, dengan buttons",
-                "type" : "button",
-                "buttons" : [
-                    {
-                        "label" : "google",
-                        "type": "url",
-                        "url" : "google.com"
-                    },
-                    {
-                        "label" : "vutura",
-                        "type": "url",
-                        "url" : "vutura.io"
-                    }
-                ]
-            }
-        ]
     }
 }
