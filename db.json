@@ -48,41 +48,5 @@
                 ]
             }
         ]
-    },
-    "Carousel" : {
-    "chats": [
-        {
-            "columns" : [
-                {
-                    "title": <string>
-                    "text" : <string>,
-                    "image_url" : <string>, (Optional)
-                    "buttons" : [
-                        {
-                            "label" : <string>,
-                            "type": "path",
-                            "path" : <string>, (PATH_ID)
-                            "variable" : { (Optional)
-                                "key": "value",
-                                "key1": "value1"
-                            }
-                        },
-                        {
-                            "label" : <string>,
-                            "type": "text",
-                            "text" : <string>
-                        },
-                        {
-                            "label" : <string>,
-                            "type": "url",
-                            "url" : <string>
-                        }
-                    ],
-                    "type" : "button"
-                }
-            ],
-            "type" : "carousel"
-        }
-    ]
-}
+    }
 }
