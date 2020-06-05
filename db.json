@@ -1,20 +1,39 @@
 {
-    "text" : {
-        "chats": [
-            {
-                "text" : "Halo {{end_user_name}}, ini adalah json-api response text bubble 1",
-                "type" : "text"
-            },
-            {
-                "text" : "ini adalah json-api response text bubble 2",
-                "type" : "text"
-            },
-            {
-                "variable" : {
-                    "company" : "Vutura"
-                },
-                "type" : "variable"
-            }
-        ]
-    }
+    "carousel" : {
+    "chats": [
+        {
+            "columns" : [
+                {
+                    "title": <string>
+                    "text" : <string>,
+                    "image_url" : <string>, (Optional)
+                    "buttons" : [
+                        {
+                            "label" : <string>,
+                            "type": "path",
+                            "path" : <string>, (PATH_ID)
+                            "variable" : { (Optional)
+                                "key": "value",
+                                "key1": "value1"
+                            }
+                        },
+                        {
+                            "label" : <string>,
+                            "type": "text",
+                            "text" : <string>
+                        },
+                        {
+                            "label" : <string>,
+                            "type": "url",
+                            "url" : <string>
+                        }
+                    ],
+                    "type" : "button"
+                }
+            ],
+            "type" : "carousel"
+        }
+    ]
+}
+
 }
