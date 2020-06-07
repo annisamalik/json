@@ -1,31 +1,31 @@
 {
-    "carousel" : {
+    "promotion" : {
     "chats": [
         {
             "columns" : [
                 {
-                    "title": <string>
-                    "text" : <string>,
-                    "image_url" : <string>, (Optional)
+                    "title": "Macbook Air"
+                    "text" : "Rp 15.000.000",
+                    "image_url" : "https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-970-80.jpg",
                     "buttons" : [
                         {
-                            "label" : <string>,
+                            "label" : "Beli",
                             "type": "path",
-                            "path" : <string>, (PATH_ID)
-                            "variable" : { (Optional)
+                            "path" : "beliproduk", 
+                            "variable" : { 
                                 "key": "value",
                                 "key1": "value1"
                             }
                         },
                         {
-                            "label" : <string>,
+                            "label" : "Kembali",
                             "type": "text",
-                            "text" : <string>
+                            "text" : "kembali"
                         },
                         {
-                            "label" : <string>,
+                            "label" : "kembali",
                             "type": "url",
-                            "url" : <string>
+                            "url" : "https://a"
                         }
                     ],
                     "type" : "button"
