@@ -8,25 +8,7 @@
 						"text" : "Rp 15.000.000",
 						"image_url" : "https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-970-80.jpg",
 						"buttons" : [
-							{
-								"label" : "Beli",
-								"type": "path",
-								"path" : "beliproduk", 
-								"variable" : { 
-									"key": "value",
-									"key1": "value1"
-								}
-							},
-							{
-								"label" : "Kembali",
-								"type": "text",
-								"text" : "kembali"
-							},
-							{
-								"label" : "kembali",
-								"type": "url",
-								"url" : "https://a"
-							}
+							
 						],
 						"type" : "button"
 					}
