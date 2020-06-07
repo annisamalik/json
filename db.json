@@ -13,9 +13,14 @@
 								"type": "path",
 								"path" : "5ed9ebd020f8374bf65abbe6", 
 								"variable" : { 
-									"key": "value",
-									"key1": "value1"
+									"nama_produk": "Macbook Air",
+									"harga_produk": "15.000.000"
 								}
+							},
+							{
+								"label" : "Kembali",
+								"type": "path",
+								"path" : "5ed5b85920f8374bf65aa244"
 							}
 						],
 						"type" : "button"
