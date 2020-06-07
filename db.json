@@ -11,6 +11,15 @@
 							
 						],
 						"type" : "button"
+					},
+					{
+						"title": "Macbook Air",
+						"text" : "Rp 15.000.000",
+						"image_url" : "https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-970-80.jpg",
+						"buttons" : [
+							
+						],
+						"type" : "button"
 					}
 				],
 				"type" : "carousel"
