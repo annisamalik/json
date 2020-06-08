@@ -14,7 +14,8 @@
 								"path" : "5ed9ebd020f8374bf65abbe6", 
 								"variable" : { 
 									"nama_produk": "Macbook Air",
-									"harga_produk": "15.000.000"
+									"harga_produk": "15.000.000",
+									"keranjang" : "Macbook Air - Rp. 15.000.000 {{keranjang}}"
 								}
 							},
 							{
