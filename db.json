@@ -76,21 +76,9 @@
 	},
 	"keranjangbelanja": {
 		"chats": [
-            {
-                "text" : "{{nama_produk}} - {{harga_produk}}",
-                "type" : "button",
-                "buttons" : [
-                    {
-                        "label" : "Check Out",
-                        "type": "path",
-                        "path" : "5ed9e5e120f8374bf65abbd3 "
-                    },
-                    {
-                        "label" : "Lanjut Belanja",
-                        "type": "path",
-                        "path" : "5ed5f3ac20f8374bf65aa6a5"
-                    }
-                ]
+			{
+		"text" : "{{nama_produk}} - {{harga_produk}}",
+                "type" : "text"
             }
         ]
 	}
