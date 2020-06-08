@@ -81,5 +81,80 @@
                 "type" : "text"
             }
         ]
+	},
+	"laptop" : {
+		"chats": [
+			{
+				"columns" : [
+					{
+						"title": "Macbook Air",
+						"text" : "Rp 15.000.000",
+						"image_url" : "https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-970-80.jpg",
+						"buttons" : [
+							{
+								"label" : "Beli",
+								"type": "path",
+								"path" : "5ed9ebd020f8374bf65abbe6", 
+								"variable" : { 
+									"nama_produk": "Macbook Air",
+									"harga_produk": "15.000.000"
+								}
+							},
+							{
+								"label" : "Kembali",
+								"type": "path",
+								"path" : "5ed5b85920f8374bf65aa244"
+							}
+						],
+						"type" : "button"
+					},
+					{
+						"title": "Macbook Pro",
+						"text" : "Rp 30.000.000",
+						"image_url" : "https://sm.pcmag.com/t/pcmag_ap/review/a/apple-macb/apple-macbook-pro-16-inch_e1zs.640.jpg",
+						"buttons" : [
+							{
+								"label" : "Beli",
+								"type": "path",
+								"path" : "5ed9ebd020f8374bf65abbe6", 
+								"variable" : { 
+									"nama_produk": "Macbook Pro",
+									"harga_produk": "30.000.000"
+								}
+							},
+							{
+								"label" : "Kembali",
+								"type": "path",
+								"path" : "5ed5b85920f8374bf65aa244"
+							}
+						],
+						"type" : "button"
+					},
+					{
+						"title": "iMac",
+						"text" : "Rp 20.000.000",
+						"image_url" : "https://ibox.co.id/media/catalog/product/cache/3/image/9df78eab33525d08d6e5fb8d27136e95/i/m/imac-27-cto-hero-201903_1_1.jpeg",
+						"buttons" : [
+							{
+								"label" : "Beli",
+								"type": "path",
+								"path" : "5ed9ebd020f8374bf65abbe6", 
+								"variable" : { 
+									"nama_produk": "iMac",
+									"harga_produk": "20.000.000"
+								}
+							},
+							{
+								"label" : "Kembali",
+								"type": "path",
+								"path" : "5ed5b85920f8374bf65aa244"
+							}
+						],
+						"type" : "button"
+					}
+				],
+				"type" : "carousel"
+			}
+		]
 	}
 }
