@@ -74,7 +74,7 @@
 			}
 		]
 	},
-	"keranjangbelanja": {
+	"keranjang": {
 		"chats": [
 			{
 		"text" : "{{nama_produk}} - {{harga_produk}}",
