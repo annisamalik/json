@@ -15,7 +15,7 @@
 								"variable" : { 
 									"nama_produk": "Macbook Air",
 									"harga_produk": "15.000.000",
-									"keranjangbelanja" : "Macbook Air - Rp. 15.000.000 \n {{keranjangbelanja}}"
+									"keranjangbelanja" : "Macbook Air - Rp. 15.000.000 \\n {{keranjangbelanja}}"
 								}
 							},
 							{
