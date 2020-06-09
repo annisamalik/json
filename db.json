@@ -81,9 +81,11 @@
 	"keranjang": {
 		"chats": [
 			{
-		"text" : "{{nama_produk}} - {{harga_produk}}",
-                "type" : "text"
-            }
+		      "variable": {
+			"keranjangbelanja": ""
+		      },
+		      "type": "variable"
+		    },
         ]
 	},
 	"laptop" : {
