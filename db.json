@@ -15,7 +15,7 @@
 								"variable" : { 
 									"nama_produk": "Macbook Air",
 									"harga_produk": "15.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -38,7 +38,7 @@
 								"variable" : { 
 									"nama_produk": "iPhone XR",
 									"harga_produk": "10.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -61,7 +61,7 @@
 								"variable" : { 
 									"nama_produk": "iPad 7",
 									"harga_produk": "6.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -101,7 +101,7 @@
 								"variable" : { 
 									"nama_produk": "Macbook Air",
 									"harga_produk": "15.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -124,7 +124,7 @@
 								"variable" : { 
 									"nama_produk": "Macbook Pro",
 									"harga_produk": "30.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -147,7 +147,7 @@
 								"variable" : { 
 									"nama_produk": "iMac",
 									"harga_produk": "20.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -179,7 +179,7 @@
 								"variable" : { 
 									"nama_produk": "iPad Air 2019",
 									"harga_produk": "8.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -202,7 +202,7 @@
 								"variable" : { 
 									"nama_produk": "iPad 7",
 									"harga_produk": "5.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -225,7 +225,7 @@
 								"variable" : { 
 									"nama_produk": "iPad Pro",
 									"harga_produk": "20.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -257,7 +257,7 @@
 								"variable" : { 
 									"nama_produk": "iPhone XR",
 									"harga_produk": "10.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -280,7 +280,7 @@
 								"variable" : { 
 									"nama_produk": "iPhone 11",
 									"harga_produk": "10.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
@@ -303,7 +303,7 @@
 								"variable" : { 
 									"nama_produk": "iPhone 11 Pro",
 									"harga_produk": "15.000.000",
-									"keranjangbelanja" : "{{nama_produk}} - {{harga_produk}} \\n{{keranjangbelanja}}"
+									"keranjangbelanja" : "{{keranjangbelanja}}\\n{{nama_produk}} - {{harga_produk}}"
 								}
 							},
 							{
