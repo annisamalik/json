@@ -1,13 +1,10 @@
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-
-
-
 pesanan = {}
 
 produk = {
-  "laptop":
+  "Mac":
       { "list_barang" : [
     {
       "id": 1,
@@ -34,8 +31,8 @@ produk = {
       "stok" : 50
     }
   ],
-      "url_img" : "",
-      "keterangan" : ""},
+      "url_img" : "https://storage.googleapis.com/vutura/assets/images/b9e02c0c-5a12-4740-9280-2774a9c61598.jpg",
+      "keterangan" : "Silahkan klik tombol di bawah untuk mencari produk Mac yang sesuai"},
   "iPad":
       { "list_barang" : [
     {
@@ -63,8 +60,8 @@ produk = {
       "stok" : 50
     }
   ],
-      "url_img" : "",
-      "keterangan" : ""},
+      "url_img" : "https://i.pcmag.com/imagery/reviews/04Pl0gzG2hLLGkonGAsUMmb-12..v_1574731296.jpg",
+      "keterangan" : "Silahkan klik tombol di bawah untuk mencari tablet iPad yang sesuai"},
 "iPhone":
       { "list_barang" : [
     {
@@ -92,25 +89,15 @@ produk = {
       "stok" : 50
     }
   ],
-      "url_img" : "",
-      "keterangan" : ""}
+      "url_img" : "https://cdn.vox-cdn.com/thumbor/MwokWf8IUu77WSTyqnrzfHfrWew=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/19206380/akrales_190913_3666_0391.jpg",
+      "keterangan" : "Silahkan klik tombol di bawah untuk mencari smartphone iPhone yang sesuai"}
 }
 
 data_keranjang = {
-    "iPhone XR": {"jumlah": 3, "harga": 15000000, "url": "https://p.ipricegroup.com/uploaded_a545ecc174943263565ec786c03b9fdf.jpg"},
-    "iPad 7": {"jumlah": 5, "harga": 5000000, "url" : "https://s.blanja.com/picspace/56/305208/700.462_e3cc17e2d3ae4faa8102dcb0435bba35.jpg"},
-    "Macbook Air": {"jumlah" : 1, "harga": 13000000, "url" : "https://cdn.mos.cms.futurecdn.net/TaicKGcS88HAJ9eHtx6JwH-970-80.jpg"}
+
 }
-"""
-@app.route('/kategori')
-def tampil_kategori():
-    coba = []
-    for kategori in produk:
-        print(kategori)
 
 
-    return kategori
-"""
 @app.route('/<kategori>')
 def tampil_produk(kategori):
     kolom = []
@@ -130,7 +117,8 @@ def tampil_produk(kategori):
                     "path": "5ed9ebd020f8374bf65abbe6",
                     "variable": {
                         "nama_produk": produk[kategori]["list_barang"][i]["nama_produk"],
-                        "harga_produk": "Rp{:,.2f}".format(produk[kategori]["list_barang"][i]["harga_produk"])
+                        "harga_produk": str(produk[kategori]["list_barang"][i]["harga_produk"]),
+                        "url_img" : produk[kategori]["list_barang"][i]["url_img"]
                     }
                 },
                 {
@@ -144,14 +132,14 @@ def tampil_produk(kategori):
             kolom.append(info_produk)
 
 
-    return {
+    return jsonify({
         "chats": [
             {
                 "columns": kolom,
                 "type": "carousel"
             }
         ]
-        }
+        })
 
 @app.route('/promo')
 def tampil_promo():
@@ -164,8 +152,7 @@ def tampil_promo():
             if barang["stok"] > 0 and barang["promo"]:
                 info_produk = {
                     "title": barang["nama_produk"],
-                    "text": "Rp{:,.2f}".format(barang["harga_produk"]) + "\nStok :" + str(
-                        barang["stok"]) + "\n" + lagi_promo,
+                    "text": "Rp{:,.2f}".format(barang["harga_produk"]) + "\nStok :" + str(barang["stok"]) + "\n" + lagi_promo,
                     "image_url": barang["url_img"],
                     "buttons": [
                         {
@@ -174,7 +161,8 @@ def tampil_promo():
                             "path": "5ed9ebd020f8374bf65abbe6",
                             "variable": {
                                 "nama_produk": barang["nama_produk"],
-                                "harga_produk": "Rp{:,.2f}".format(barang["harga_produk"])
+                                "harga_produk": str(barang["harga_produk"]),
+                                "url_img" : barang["url_img"]
                             }
                         },
                         {
@@ -187,16 +175,16 @@ def tampil_promo():
                 }
                 kolom.append(info_produk)
 
-    return {
+    return jsonify({
         "chats": [
             {
                 "columns": kolom,
                 "type": "carousel"
             }
         ]
-    }
+    })
 
-@app.route('/tampil_kategori')
+@app.route('/kategori')
 def tampil_kategori():
     kolom = []
     for kategori in produk:
@@ -213,7 +201,7 @@ def tampil_kategori():
                     {
                         "label": "Cari",
                         "type": "path",
-                        "path": "5ed9ebd020f8374bf65abbe6",
+                        "path": "5ee0868b20f837185ebed1a4",
                         "variable": {
                             "kategori": kategori
                         }
@@ -221,47 +209,47 @@ def tampil_kategori():
                     {
                         "label": "Kembali",
                         "type": "path",
-                        "path": "5ed5f3ac20f8374bf65aa6a5" #ke menu greeting atau menu
+                        "path": "5ed5b85920f8374bf65aa244" #ke menu greeting
                     }
                 ],
                 "type": "button"
             }
             kolom.append(info_produk)
 
-    return {
+    return jsonify({
         "chats": [
             {
                 "columns": kolom,
                 "type": "carousel"
             }
         ]
-    }
+    })
 
 @app.route('/keranjang')
 def tampil_keranjang():
     if len(data_keranjang)==0:
-        return {
+        return jsonify({
             "chats": [
                 {
                     "text" : "Keranjang belanja anda masih kosong",
                     "type" : "text"
                 }
             ]
-        }
+        })
     else:
         listkeranjang = ""
         totalharga = 0
         for produk in data_keranjang:
-            listkeranjang = listkeranjang+str(produk)+" - "+str(data_keranjang[produk]["harga"])+" Jumlah:"+str(data_keranjang[produk]["jumlah"])+"\n"
+            listkeranjang = listkeranjang+str(produk)+" - "+str("Rp{:,.2f}".format(data_keranjang[produk]["harga"]))+" Jumlah:"+str(data_keranjang[produk]["jumlah"])+"\n" #jumlahnya kadang suka ga tentu
             totalharga = totalharga+ (data_keranjang[produk]["harga"]*data_keranjang[produk]["jumlah"])
-        return {
+        return jsonify({
             "chats": [
                 {
-                    "text" : str(listkeranjang) + "\nTotal belanja kamu adalah "+str(totalharga),
+                    "text" : str(listkeranjang) + "\nTotal belanja kamu adalah "+str("Rp{:,.2f}".format(totalharga)),
                     "type" : "text"
                 }
             ]
-        }
+        })
 
 @app.route('/carousel_keranjang')
 def carousel_keranjang():
@@ -298,40 +286,81 @@ def carousel_keranjang():
         }
         kolom.append(info_produk)
 
-    return {
+    return jsonify({
         "chats": [
             {
                 "columns": kolom,
                 "type": "carousel"
             }
         ]
-    }
+    })
 
-@app.route('/keranjang/hapus/', methods=['POST'])
-##contoh bentuk body request {"nama_produk" : "Macbook Air"}
+@app.route('/keranjang/hapus', methods=['POST'])
+##contoh bentuk body request {"nama" : "Macbook Air"}
 def hapus_keranjang():
-    hapus_produk = request.json['nama_produk']
+    hapus_produk = request.json['nama']
     # I.S : Produk sudah ada di keranjang
-    if data_keranjang[hapus_produk]["jumlah"] > 1 :
-        data_keranjang[hapus_produk]["jumlah"] -= 1
-    else:
-        del data_keranjang[hapus_produk]
+    del data_keranjang[hapus_produk]
     return jsonify({"data_keranjang" : data_keranjang})
 
+def cek(data):
+    for kategori in data:
+        for barang in data[kategori]["list_barang"]:
+            if barang["nama_produk"] == data:
+                return barang
 
-@app.route('/keranjang/tambah/', methods=['POST'])
-##contoh bentuk body request {"nama_produk" : "Macbook Air", "harga_produk" : 13000000}
-def tambah_keranjang():
-    input_produk = { "nama_produk" : request.json['nama_produk'], "harga_produk" : request.json['harga_produk']}
+@app.route('/keranjang/ubah', methods=['POST'])
+##contoh bentuk body request {"nama" : "Macbook Air", "jumlah" : 3}
+def ubah_keranjang():
+    hapus_produk = request.json['nama']
+    jumlah_ubah = int(request.json['jumlah'])
+    # I.S : Produk sudah ada di keranjang
+    if (jumlah_ubah > cek(hapus_produk)['stok']) :
+        return jsonify({
+            "chats": [
+                {
+                    "text" : "Maaf stok barang kurang",
+                    "type" : "text"
+                }
+            ]
+        })
+    elif (jumlah_ubah == 0):
+        del data_keranjang[hapus_produk]
+        return jsonify({
+            "chats": [
+                {
+                    "text" : hapus_produk+" berhasil dihapus dari keranjang!",
+                    "type" : "text"
+                }
+            ]
+        })
+
+    else:
+        data_keranjang[hapus_produk]["jumlah"] = jumlah_ubah
+        return jsonify({
+                "chats": [
+                    {
+                        "text" : "Jumlah "+hapus_produk+" berhasil diubah menjadi"+str(jumlah_ubah)+"!",
+                        "type" : "text"
+                    }
+                ]
+            })
+
+@app.route('/keranjang/tambah/<nama>', methods=['POST'])
+##contoh bentuk body request {"nama" : "Macbook Air", "harga" : 13000000, "url" : "http://"}
+def tambah_keranjang(nama):
+    input_produk = { "nama_produk" : request.json['nama'], "harga_produk" : int(request.json['harga']), "url_img" : request.json['url']}
     if input_produk["nama_produk"] in data_keranjang :
         data_keranjang[input_produk["nama_produk"]]["jumlah"] += 1
     else:
-        data_keranjang[input_produk["nama_produk"]] = {"jumlah": 1, "harga": input_produk["harga_produk"]}
-        print(data_keranjang)
+        data_keranjang[input_produk["nama_produk"]] = {"jumlah": 1, "harga": input_produk["harga_produk"], "url" : input_produk["url_img"]}
+    cek(input_produk["nama_produk"])["stok"] -= 1
     return jsonify({"data_keranjang" : data_keranjang})
 
+@app.route('/')
+def index():
+    return "<h1>Welcome to our server !!</h1>"
 
-
-
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(port=5000)
