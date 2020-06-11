@@ -303,19 +303,19 @@ def hapus_keranjang():
     del data_keranjang[hapus_produk]
     return jsonify({"data_keranjang" : data_keranjang})
 
-def cek(data):
-    for kategori in data:
-        for barang in data[kategori]["list_barang"]:
-            if barang["nama_produk"] == data:
-                return barang
-
 @app.route('/keranjang/ubah', methods=['POST'])
-##contoh bentuk body request {"nama" : "Macbook Air", "jumlah" : 3}
+##contoh bentuk body request {"nama" : "Macbook Air", "jumlah" : "3"}
 def ubah_keranjang():
     hapus_produk = request.json['nama']
     jumlah_ubah = int(request.json['jumlah'])
     # I.S : Produk sudah ada di keranjang
-    if (jumlah_ubah > cek(hapus_produk)['stok']) :
+    stok_barang = 0
+    for kategori in produk:
+        for barang in produk[kategori]["list_barang"]:
+            if barang["nama_produk"] == hapus_produk:
+                stok_barang = barang['stok']
+    selisih = (data_keranjang[hapus_produk]["jumlah"] - jumlah_ubah)
+    if ((selisih*-1) > stok_barang) :
         return jsonify({
             "chats": [
                 {
@@ -325,6 +325,10 @@ def ubah_keranjang():
             ]
         })
     elif (jumlah_ubah == 0):
+        for kategori in produk:
+            for barang in produk[kategori]["list_barang"]:
+                if barang["nama_produk"] == hapus_produk:
+                    barang["stok"] += data_keranjang[hapus_produk]["jumlah"]
         del data_keranjang[hapus_produk]
         return jsonify({
             "chats": [
@@ -337,10 +341,14 @@ def ubah_keranjang():
 
     else:
         data_keranjang[hapus_produk]["jumlah"] = jumlah_ubah
+        for kategori in produk:
+            for barang in produk[kategori]["list_barang"]:
+                if barang["nama_produk"] == hapus_produk:
+                    barang["stok"] += selisih
         return jsonify({
                 "chats": [
                     {
-                        "text" : "Jumlah "+hapus_produk+" berhasil diubah menjadi"+str(jumlah_ubah)+"!",
+                        "text" : "Jumlah "+hapus_produk+" berhasil diubah menjadi "+str(jumlah_ubah)+"!",
                         "type" : "text"
                     }
                 ]
@@ -350,11 +358,15 @@ def ubah_keranjang():
 ##contoh bentuk body request {"nama" : "Macbook Air", "harga" : 13000000, "url" : "http://"}
 def tambah_keranjang(nama):
     input_produk = { "nama_produk" : request.json['nama'], "harga_produk" : int(request.json['harga']), "url_img" : request.json['url']}
+    #I.S Jika stok barang kosong maka tidak akan ditampilkan
     if input_produk["nama_produk"] in data_keranjang :
         data_keranjang[input_produk["nama_produk"]]["jumlah"] += 1
     else:
         data_keranjang[input_produk["nama_produk"]] = {"jumlah": 1, "harga": input_produk["harga_produk"], "url" : input_produk["url_img"]}
-    cek(input_produk["nama_produk"])["stok"] -= 1
+    for kategori in produk:
+        for barang in produk[kategori]["list_barang"]:
+            if barang["nama_produk"] == input_produk["nama_produk"]:
+                barang["stok"] -= 1
     return jsonify({"data_keranjang" : data_keranjang})
 
 @app.route('/')
