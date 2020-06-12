@@ -261,7 +261,7 @@ def carousel_keranjang():
             "image_url": data_keranjang[produk]["url"],
             "buttons": [
                 {
-                    "label": "Hapus Semua",
+                    "label": "Hapus Produk",
                     "type": "path",
                     "path": "5ee09a4e20f837185ebed3a3",
                     "variable": {
@@ -300,6 +300,10 @@ def carousel_keranjang():
 def hapus_keranjang():
     hapus_produk = request.json['nama']
     # I.S : Produk sudah ada di keranjang
+    for kategori in produk:
+        for barang in produk[kategori]["list_barang"]:
+            if barang["nama_produk"] == hapus_produk:
+                barang["stok"] += data_keranjang[hapus_produk]["jumlah"]
     del data_keranjang[hapus_produk]
     return jsonify({"data_keranjang" : data_keranjang})
 
